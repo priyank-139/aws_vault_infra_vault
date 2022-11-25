@@ -137,6 +137,43 @@ resource "aws_nat_gateway" "natgateway_2" {
   subnet_id     = aws_subnet.pub_sub2.id
 }
 
+
+
+#=================================================================
+# Create EIP for NAT GW3
+#================================================================
+resource "aws_eip" "eip_natgw3" {
+  count = "1"
+}
+#===============================================================
+# Create NAT gateway3
+#==============================================================
+
+resource "aws_nat_gateway" "natgateway_3" {
+  count         = "1"
+  allocation_id = aws_eip.eip_natgw3[count.index].id
+  subnet_id     = aws_subnet.prv_sub1.id
+}
+
+#=================================================================
+# Create EIP for NAT GW4
+#================================================================
+resource "aws_eip" "eip_natgw4" {
+  count = "1"
+}
+#===============================================================
+# Create NAT gateway4
+#==============================================================
+
+resource "aws_nat_gateway" "natgateway_4" {
+  count         = "1"
+  allocation_id = aws_eip.eip_natgw4[count.index].id
+  subnet_id     = aws_subnet.prv_sub2.id
+}
+
+
+
+
 #================================================================
 # Create private route table for prv sub1
 #================================================================
