@@ -8,7 +8,7 @@ resource "aws_iam_policy" "vault-automation" {
   "Statement": [
     {
       "Sid": "Stmt1668640727509",
-      "Action": "*",
+      "Action": "kms",
       "Effect": "Allow",
       "Resource": "*"
     }
