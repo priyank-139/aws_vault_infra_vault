@@ -31,7 +31,7 @@ resource "aws_iam_role" "vault-automation" {
         Effect = "Allow"
         Sid    = ""
         Principal = {
-          Service = "kms" 
+          Service = "ec2.amazonaws.com" 
         }
       },
     ]
