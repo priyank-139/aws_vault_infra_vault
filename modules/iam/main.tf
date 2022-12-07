@@ -1,4 +1,4 @@
-resource "aws_iam_policy" "vault-auto_policy" {
+resource "aws_iam_policy" "vault-automation" {
   name        = var.policy-name-c
   description = "vault-kms"
   path        = "/"
@@ -40,6 +40,6 @@ resource "aws_iam_role" "vault-automation" {
 
 resource "aws_iam_role_policy_attachment" "vault-automation" {
   role       = aws_iam_role.vault-automation.name
-  policy_arn = aws_iam_policy.vault-auto_policy.arn
+  policy_arn = aws_iam_policy.vault-automation.arn
 }
 
