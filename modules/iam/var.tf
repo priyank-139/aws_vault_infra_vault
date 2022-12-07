@@ -1,8 +1,8 @@
 variable "policy-name-c" {
-default = "vault-policy"
+default = "vault-polic"
 }
 
 variable "iam-role-c" {
-default = "vault-role"
+default = "vault-rol"
 }
 
