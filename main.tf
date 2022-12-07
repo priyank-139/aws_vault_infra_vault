@@ -28,11 +28,11 @@ module "kms_key" {
 }
 
 
-module "iam_role_kms" {
-  source = "./modules/iam"
+# module "iam_role_kms" {
+ # source = "./modules/iam"
 
-  policy-name-c = var.policy-name-r
-  iam-role-c    = var.iam-role-r
+  #policy-name-c = var.policy-name-r
+  #iam-role-c    = var.iam-role-r
 
-}
+#}
 
